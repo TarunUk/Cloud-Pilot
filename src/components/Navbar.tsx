@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowRight } from 'lucide-react';
+import { Logo } from './Logo';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -31,16 +32,13 @@ export const Navbar: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
           
-          {/* Brand Wordmark */}
+          {/* Brand Wordmark & Animated Logo */}
           <a href="#" className="flex items-center gap-3 group">
-            <div className="w-8 h-8 rounded-lg bg-[#0E1322] border border-brand-500/30 flex items-center justify-center text-brand-400 group-hover:border-brand-400/60 transition-colors shadow-glow-brand/30">
-              <svg viewBox="0 0 24 24" fill="none" className="w-4 h-4">
-                <path d="M12 2L20 7V17L12 22L4 17V7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-                <circle cx="12" cy="12" r="3" fill="#10B981" />
-              </svg>
-            </div>
+            <Logo size="md" />
             <div className="flex items-center gap-2">
-              <span className="font-bold text-lg text-white tracking-tight">CloudPilot</span>
+              <span className="font-bold text-lg text-white tracking-tight group-hover:text-slate-100 transition-colors">
+                CloudPilot
+              </span>
             </div>
           </a>
 

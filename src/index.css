@@ -67,11 +67,11 @@
   left: 10%;
   right: 10%;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
   pointer-events: none;
 }
 
-/* Radial-Faded Technical Grid (Edge Faded to avoid clutter) */
+/* Radial-Faded Technical Grid */
 .bg-grid-faded {
   background-size: 56px 56px;
   background-image: 
@@ -84,28 +84,61 @@
 /* Smooth Floating Micro-Interactions */
 @keyframes floatGentle {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(-8px) rotate(0.4deg);
+    transform: translateY(-6px);
   }
 }
 
 @keyframes floatCounter {
   0%, 100% {
-    transform: translateY(0px) rotate(0deg);
+    transform: translateY(0px);
   }
   50% {
-    transform: translateY(8px) rotate(-0.4deg);
+    transform: translateY(6px);
   }
 }
 
 .animate-float-gentle {
-  animation: floatGentle 7s ease-in-out infinite;
+  animation: floatGentle 6s ease-in-out infinite;
 }
 
 .animate-float-counter {
-  animation: floatCounter 8s ease-in-out infinite;
+  animation: floatCounter 7s ease-in-out infinite;
+}
+
+/* Seamless Looping Logo Shimmer Animation */
+@keyframes logoSweep {
+  0% {
+    stop-color: #10B981;
+    stop-opacity: 0.8;
+  }
+  50% {
+    stop-color: #38BDF8;
+    stop-opacity: 1;
+  }
+  100% {
+    stop-color: #10B981;
+    stop-opacity: 0.8;
+  }
+}
+
+@keyframes logoPulseGlow {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.18);
+    opacity: 1;
+    filter: drop-shadow(0 0 6px #10B981);
+  }
+}
+
+.animate-logo-pulse {
+  animation: logoPulseGlow 3s ease-in-out infinite;
+  transform-origin: center;
 }
 
 /* Smooth Scrollbar */

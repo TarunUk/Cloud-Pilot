@@ -1,4 +1,5 @@
 import React from 'react';
+import { Logo } from './Logo';
 
 export const Footer: React.FC = () => {
   return (
@@ -9,13 +10,8 @@ export const Footer: React.FC = () => {
           
           {/* Brand Col */}
           <div className="col-span-2">
-            <div className="flex items-center gap-2.5 mb-3">
-              <div className="w-7 h-7 rounded-lg bg-[#0E1322] border border-brand-500/30 flex items-center justify-center text-brand-400">
-                <svg viewBox="0 0 24 24" fill="none" className="w-3.5 h-3.5">
-                  <path d="M12 2L20 7V17L12 22L4 17V7L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinejoin="round" />
-                  <circle cx="12" cy="12" r="3" fill="#10B981" />
-                </svg>
-              </div>
+            <div className="flex items-center gap-2.5 mb-3 group">
+              <Logo size="sm" />
               <span className="font-bold text-base text-white tracking-tight">CloudPilot</span>
             </div>
             
@@ -33,9 +29,9 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider mb-3 font-mono">Platform</h4>
             <ul className="space-y-2">
-              <li><a href="#dashboard-preview" className="hover:text-white transition-colors">Overview</a></li>
+              <li><a href="#product" className="hover:text-white transition-colors">Overview</a></li>
               <li><a href="#deploy" className="hover:text-white transition-colors">Deployments</a></li>
-              <li><a href="#infrastructure" className="hover:text-white transition-colors">Infrastructure</a></li>
+              <li><a href="#product" className="hover:text-white transition-colors">Infrastructure</a></li>
               <li><a href="#monitoring" className="hover:text-white transition-colors">Monitoring</a></li>
             </ul>
           </div>
@@ -55,10 +51,10 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="font-semibold text-white uppercase text-[11px] tracking-wider mb-3 font-mono">Security</h4>
             <ul className="space-y-2">
-              <li><a href="#dashboard-preview" className="hover:text-white transition-colors">SOC-2 Type II</a></li>
-              <li><a href="#dashboard-preview" className="hover:text-white transition-colors">Zero-Trust IAM</a></li>
-              <li><a href="#dashboard-preview" className="hover:text-white transition-colors">Privacy Policy</a></li>
-              <li><a href="#dashboard-preview" className="hover:text-white transition-colors">Terms of Service</a></li>
+              <li><a href="#product" className="hover:text-white transition-colors">SOC-2 Type II</a></li>
+              <li><a href="#product" className="hover:text-white transition-colors">Zero-Trust IAM</a></li>
+              <li><a href="#product" className="hover:text-white transition-colors">Privacy Policy</a></li>
+              <li><a href="#product" className="hover:text-white transition-colors">Terms of Service</a></li>
             </ul>
           </div>
 
