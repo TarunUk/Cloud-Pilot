@@ -1,4 +1,6 @@
 import React from 'react';
+import { ThemeProvider } from './context/ThemeContext';
+import { SpaceGravityCanvas } from './components/SpaceGravityCanvas';
 import { Navbar } from './components/Navbar';
 import { Hero } from './components/Hero';
 import { HeroDashboard } from './components/HeroDashboard';
@@ -10,34 +12,39 @@ import { Footer } from './components/Footer';
 
 export const App: React.FC = () => {
   return (
-    <div className="relative min-h-screen bg-bg-hero text-slate-100 selection:bg-brand-500/30 selection:text-brand-300 font-sans overflow-x-hidden">
-      {/* Top Floating Navbar */}
-      <Navbar />
+    <ThemeProvider>
+      <div className="relative min-h-screen bg-background text-foreground selection:bg-brand-500/30 selection:text-brand-300 font-sans overflow-x-hidden transition-colors duration-300">
+        {/* Living Space / Gravity Background Layer */}
+        <SpaceGravityCanvas />
 
-      {/* Narrative Page Flow */}
-      <main>
-        {/* 1. Hero */}
-        <Hero />
+        {/* Top Floating Navbar */}
+        <Navbar />
 
-        {/* 2. Product Dashboard Centerpiece */}
-        <HeroDashboard />
+        {/* Narrative Page Flow */}
+        <main className="relative z-10">
+          {/* 1. Hero — Charcoal + Emerald + Electric Blue */}
+          <Hero />
 
-        {/* 3. Deployment Narrative */}
-        <DeploySection />
+          {/* 2. Product Dashboard Centerpiece — Deep Navy + Blue + Cyan */}
+          <HeroDashboard />
 
-        {/* 4. Monitoring & Observability Narrative */}
-        <MonitoringSection />
+          {/* 3. Deployment Narrative — Dark Indigo + Violet + Blue */}
+          <DeploySection />
 
-        {/* 5. How It Works */}
-        <HowItWorks />
+          {/* 4. Monitoring & Observability Narrative — Deep Blue + Cyan + Cool White */}
+          <MonitoringSection />
 
-        {/* 6. Final Call to Action */}
-        <FinalCTA />
-      </main>
+          {/* 5. How It Works — Deep Navy/Slate + Emerald Typographic System */}
+          <HowItWorks />
 
-      {/* Footer */}
-      <Footer />
-    </div>
+          {/* 6. Final Call to Action — Charcoal + Emerald + Blue Glow */}
+          <FinalCTA />
+        </main>
+
+        {/* Footer */}
+        <Footer />
+      </div>
+    </ThemeProvider>
   );
 };
 
