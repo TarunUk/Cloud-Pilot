@@ -3,85 +3,44 @@
 @tailwind utilities;
 
 :root {
-  /* Default Dark Mode Command-Center Tokens */
-  --background: #07080C;
+  /* Cosmic Pink/Purple Command-Center Tokens */
+  --background: #0C0414;
   --foreground: #F8FAFC;
-  --muted-text: #94A3B8;
-  --surface: #0B0E17;
-  --surface-secondary: #111624;
-  --surface-card: #090D18;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-subtle: rgba(255, 255, 255, 0.04);
-  --border-highlight: rgba(16, 185, 129, 0.4);
+  --muted-text: #C4B5FD;
+  --surface: #120620;
+  --surface-secondary: #19092C;
+  --surface-card: #140725;
+  --border: rgba(192, 105, 255, 0.16);
+  --border-subtle: rgba(244, 223, 255, 0.08);
+  --border-highlight: rgba(192, 105, 255, 0.6);
 
-  /* Semantic Accent Tokens */
-  --primary: #10B981;
-  --brand-accent: #34D399;
-  --blue: #3B82F6;
-  --blue-light: #60A5FA;
-  --cyan: #06B6D4;
-  --cyan-light: #38BDF8;
-  --violet: #8B5CF6;
-  --violet-light: #A78BFA;
-  --success: #10B981;
-  --ambient-glow: rgba(16, 185, 129, 0.15);
+  /* Semantic Accent Tokens (Vibrant Cosmic Pink & Purple) */
+  --primary: #C069FF;
+  --brand-accent: #E879F9;
+  --blue: #C069FF;
+  --blue-light: #F4DFFF;
+  --cyan: #EC4899;
+  --cyan-light: #F472B6;
+  --violet: #A855F7;
+  --violet-light: #E879F9;
+  --success: #E879F9;
+  --ambient-glow: rgba(192, 105, 255, 0.3);
 
-  /* Atmospheric Section Environments (Dark) */
-  --bg-hero: #07080C;
-  --bg-product: #080D1A;
-  --bg-deploy: #0A0C1B;
-  --bg-monitor: #060F1A;
-  --bg-how-it-works: #070A12;
-  --bg-cta: #07080D;
-  --bg-footer: #05060A;
+  /* Atmospheric Cosmic Section Environments (Seamless Deep Purple) */
+  --bg-hero: #0C0414;
+  --bg-product: #0E0518;
+  --bg-deploy: #11061E;
+  --bg-monitor: #0E0518;
+  --bg-how-it-works: #0C0414;
+  --bg-cta: #10061C;
+  --bg-footer: #0C0414;
 
-  /* Shadows & Depth (Dark) */
-  --shadow-3d-main: 0 35px 80px -20px rgba(0, 0, 0, 0.95), 0 18px 40px -15px rgba(0, 0, 0, 0.85), inset 0 1px 1px 0 rgba(255, 255, 255, 0.12);
-  --shadow-satellite: 0 20px 45px -10px rgba(0, 0, 0, 0.85), 0 10px 20px -5px rgba(0, 0, 0, 0.65), inset 0 1px 1px 0 rgba(255, 255, 255, 0.18);
-  --grid-line-color: rgba(255, 255, 255, 0.025);
-  --rim-light-grad: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
-  --code-bg: #0E1322;
-}
-
-[data-theme="light"], .light {
-  /* Light Mode Enterprise SaaS Tokens */
-  --background: #F8FAFC;
-  --foreground: #0F172A;
-  --muted-text: #475569;
-  --surface: #FFFFFF;
-  --surface-secondary: #F1F5F9;
-  --surface-card: #FFFFFF;
-  --border: rgba(15, 23, 42, 0.10);
-  --border-subtle: rgba(15, 23, 42, 0.05);
-  --border-highlight: rgba(16, 185, 129, 0.6);
-
-  /* Semantic Accent Tokens (Optimized for High Contrast Light Surfaces) */
-  --primary: #059669;
-  --brand-accent: #10B981;
-  --blue: #2563EB;
-  --blue-light: #3B82F6;
-  --cyan: #0891B2;
-  --cyan-light: #06B6D4;
-  --violet: #7C3AED;
-  --violet-light: #8B5CF6;
-  --success: #059669;
-  --ambient-glow: rgba(16, 185, 129, 0.08);
-
-  /* Atmospheric Section Environments (Light) */
-  --bg-hero: #F8FAFC;
-  --bg-product: #F1F5F9;
-  --bg-deploy: #F4F3FA;
-  --bg-monitor: #EFF6F9;
-  --bg-how-it-works: #F8FAFC;
-  --bg-cta: #F5F8FA;
-  --bg-footer: #EDF2F7;
-
-  /* Shadows & Depth (Light) */
-  --shadow-3d-main: 0 25px 60px -15px rgba(15, 23, 42, 0.12), 0 10px 25px -10px rgba(15, 23, 42, 0.08), inset 0 1px 1px 0 rgba(255, 255, 255, 0.8);
-  --shadow-satellite: 0 12px 30px -8px rgba(15, 23, 42, 0.10), 0 6px 14px -4px rgba(15, 23, 42, 0.06), inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
-  --grid-line-color: rgba(15, 23, 42, 0.035);
-  --rim-light-grad: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.8), transparent);
-  --code-bg: #F1F5F9;
+  /* Shadows & Depth */
+  --shadow-3d-main: 0 35px 80px -20px rgba(0, 0, 0, 0.95), 0 18px 40px -15px rgba(85, 26, 148, 0.35), inset 0 1px 1px 0 rgba(244, 223, 255, 0.15);
+  --shadow-satellite: 0 20px 45px -10px rgba(0, 0, 0, 0.85), 0 10px 20px -5px rgba(192, 105, 255, 0.25), inset 0 1px 1px 0 rgba(244, 223, 255, 0.2);
+  --grid-line-color: rgba(244, 223, 255, 0.04);
+  --rim-light-grad: linear-gradient(90deg, transparent, rgba(192, 105, 255, 0.4), rgba(244, 223, 255, 0.7), rgba(192, 105, 255, 0.4), transparent);
+  --code-bg: #16082A;
 }
 
 @layer base {
@@ -91,14 +50,14 @@
 
   html {
     scroll-behavior: smooth;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #0C0414;
+    color: #F8FAFC;
   }
 
   body {
-    background-color: var(--background);
+    background-color: #0C0414;
     color: var(--foreground);
     overflow-x: hidden;
-    transition: background-color 0.3s ease, color 0.3s ease;
     font-feature-settings: 'cv02', 'cv03', 'cv04', 'cv11';
   }
 }
@@ -179,7 +138,7 @@
 /* CLOUDPILOT CONTINUOUS LOGO MOTION SYSTEM                                 */
 /* ========================================================================= */
 
-/* Continuous Energy Conduits Traveling Pulse (2.8s seamless loop) */
+/* Continuous Energy Conduits Traveling Pulse (3.2s seamless loop) */
 @keyframes logoEnergyCircuit {
   0% {
     stroke-dashoffset: 96;
@@ -205,12 +164,12 @@
   0%, 100% {
     transform: scale(0.92);
     opacity: 0.85;
-    filter: drop-shadow(0 0 3px var(--primary));
+    filter: drop-shadow(0 0 4px #C069FF);
   }
   50% {
     transform: scale(1.15);
     opacity: 1;
-    filter: drop-shadow(0 0 10px var(--brand-accent)) drop-shadow(0 0 18px var(--cyan-light));
+    filter: drop-shadow(0 0 12px #E879F9) drop-shadow(0 0 20px #C069FF);
   }
 }
 
@@ -273,16 +232,16 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--background);
+  background: #0C0414;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: rgba(148, 163, 184, 0.25);
+  background: rgba(192, 105, 255, 0.35);
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.45);
+  background: rgba(232, 121, 249, 0.6);
 }
 
 /* Accessibility: Prefers Reduced Motion */

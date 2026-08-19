@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from 'react';
-import { useTheme } from '../context/ThemeContext';
 
 interface Particle {
   x: number;
@@ -28,7 +27,6 @@ interface GravityNode {
 
 export const SpaceGravityCanvas: React.FC = () => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const { resolvedTheme } = useTheme();
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -55,14 +53,11 @@ export const SpaceGravityCanvas: React.FC = () => {
       active: false,
     };
 
-    // Particle Generation
+    // Particle Generation with Cosmic Pink & Purple Palette
     const particleCount = prefersReducedMotion ? 25 : isMobile ? 35 : 75;
     const particles: Particle[] = [];
 
-    const isDark = resolvedTheme === 'dark';
-    const starColors = isDark 
-      ? ['#10B981', '#38BDF8', '#8B5CF6', '#F8FAFC', '#94A3B8'] 
-      : ['#059669', '#2563EB', '#7C3AED', '#64748B', '#0891B2'];
+    const starColors = ['#C069FF', '#E879F9', '#F4DFFF', '#EC4899', '#D946EF', '#A855F7', '#FFFFFF'];
 
     for (let i = 0; i < particleCount; i++) {
       const depth = Math.random() < 0.6 ? 1 : Math.random() < 0.85 ? 2 : 3;
@@ -89,11 +84,11 @@ export const SpaceGravityCanvas: React.FC = () => {
       {
         x: width * 0.2,
         y: height * 0.35,
-        radius: 2,
+        radius: 2.5,
         angle: 0,
         angularSpeed: 0.003,
         orbitRadius: isMobile ? 60 : 120,
-        color: isDark ? 'rgba(16, 185, 129, 0.4)' : 'rgba(5, 150, 105, 0.3)',
+        color: 'rgba(192, 105, 255, 0.45)',
       },
       {
         x: width * 0.8,
@@ -102,7 +97,7 @@ export const SpaceGravityCanvas: React.FC = () => {
         angle: Math.PI,
         angularSpeed: -0.002,
         orbitRadius: isMobile ? 80 : 160,
-        color: isDark ? 'rgba(56, 189, 248, 0.35)' : 'rgba(37, 99, 235, 0.25)',
+        color: 'rgba(236, 72, 153, 0.4)',
       },
     ];
 
@@ -159,7 +154,7 @@ export const SpaceGravityCanvas: React.FC = () => {
 
         ctx.beginPath();
         ctx.arc(node.x, currentCenterY, node.orbitRadius, 0, Math.PI * 2);
-        ctx.strokeStyle = isDark ? 'rgba(255, 255, 255, 0.018)' : 'rgba(15, 23, 42, 0.025)';
+        ctx.strokeStyle = 'rgba(192, 105, 255, 0.06)';
         ctx.lineWidth = 1;
         ctx.setLineDash([4, 8]);
         ctx.stroke();
@@ -237,7 +232,7 @@ export const SpaceGravityCanvas: React.FC = () => {
           const dist = Math.sqrt(dx * dx + dy * dy);
 
           if (dist < maxConnectDistance) {
-            const lineOpacity = (1 - dist / maxConnectDistance) * (isDark ? 0.08 : 0.05);
+            const lineOpacity = (1 - dist / maxConnectDistance) * 0.12;
             ctx.beginPath();
             ctx.moveTo(renderX, finalY);
             ctx.lineTo(p2.x, p2RenderY);
@@ -262,7 +257,7 @@ export const SpaceGravityCanvas: React.FC = () => {
       window.removeEventListener('mousemove', handleMouseMove);
       document.removeEventListener('mouseleave', handleMouseLeave);
     };
-  }, [resolvedTheme]);
+  }, []);
 
   return (
     <canvas 

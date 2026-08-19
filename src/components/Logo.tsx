@@ -29,10 +29,10 @@ export const Logo: React.FC<LogoProps> = ({
     <div className={`flex items-center gap-3 select-none ${className}`}>
       {/* Branded Hex-Prism Command Beacon Container */}
       <div
-        className={`relative ${sizeClasses[size]} rounded-2xl bg-[#090D17] dark:bg-[#070A12] light:bg-[#0B101D] border border-brand-500/35 dark:border-brand-500/35 light:border-emerald-600/35 flex items-center justify-center transition-all duration-300 group-hover:border-brand-400 group-hover:shadow-[0_0_28px_rgba(16,185,129,0.45)] group-hover:scale-[1.03] shrink-0 shadow-satellite-pill overflow-visible`}
+        className={`relative ${sizeClasses[size]} rounded-2xl bg-[#140725] border border-[#C069FF]/40 flex items-center justify-center transition-all duration-300 group-hover:border-[#E879F9] group-hover:shadow-[0_0_28px_rgba(192,105,255,0.6)] group-hover:scale-[1.03] shrink-0 shadow-satellite-pill overflow-visible`}
       >
         {/* Continuous Ambient Glow Pulse behind logo (3.2s loop) */}
-        <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-brand-500/25 via-infra/20 to-telemetry/20 blur-[8px] animate-logo-halo pointer-events-none" />
+        <div className="absolute inset-0 rounded-2xl bg-gradient-to-tr from-[#C069FF]/30 via-[#EC4899]/25 to-[#D946EF]/25 blur-[10px] animate-logo-halo pointer-events-none" />
 
         {/* SVG Precision Geometry & Traveling Light Sweep */}
         <svg
@@ -43,26 +43,26 @@ export const Logo: React.FC<LogoProps> = ({
           <defs>
             {/* Dynamic Continuous Energy Sweep Gradient (3.2s continuous loop) */}
             <linearGradient id="cloudpilotSweepLinear" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#10B981">
+              <stop offset="0%" stopColor="#C069FF">
                 <animate
                   attributeName="stop-color"
-                  values="#10B981; #38BDF8; #8B5CF6; #10B981"
+                  values="#C069FF; #EC4899; #E879F9; #C069FF"
                   dur="3.2s"
                   repeatCount="indefinite"
                 />
               </stop>
-              <stop offset="50%" stopColor="#38BDF8">
+              <stop offset="50%" stopColor="#EC4899">
                 <animate
                   attributeName="stop-color"
-                  values="#38BDF8; #8B5CF6; #10B981; #38BDF8"
+                  values="#EC4899; #E879F9; #C069FF; #EC4899"
                   dur="3.2s"
                   repeatCount="indefinite"
                 />
               </stop>
-              <stop offset="100%" stopColor="#8B5CF6">
+              <stop offset="100%" stopColor="#E879F9">
                 <animate
                   attributeName="stop-color"
-                  values="#8B5CF6; #10B981; #38BDF8; #8B5CF6"
+                  values="#E879F9; #C069FF; #EC4899; #E879F9"
                   dur="3.2s"
                   repeatCount="indefinite"
                 />
@@ -80,9 +80,9 @@ export const Logo: React.FC<LogoProps> = ({
 
             {/* Traveling Light Pulse Gradient along boundary */}
             <linearGradient id="travelingLightBeam" x1="0%" y1="0%" x2="100%" y2="0%">
-              <stop offset="0%" stopColor="#10B981" stopOpacity="0" />
-              <stop offset="50%" stopColor="#34D399" stopOpacity="1" />
-              <stop offset="100%" stopColor="#38BDF8" stopOpacity="0" />
+              <stop offset="0%" stopColor="#C069FF" stopOpacity="0" />
+              <stop offset="50%" stopColor="#E879F9" stopOpacity="1" />
+              <stop offset="100%" stopColor="#EC4899" stopOpacity="0" />
             </linearGradient>
           </defs>
 
@@ -98,64 +98,68 @@ export const Logo: React.FC<LogoProps> = ({
           {/* Internal Telemetry Geometry Facets */}
           <path
             d="M20 3L20 20L35 28.5"
-            stroke="rgba(56, 189, 248, 0.45)"
+            stroke="rgba(244, 223, 255, 0.45)"
             strokeWidth="1.2"
-            strokeLinejoin="round"
+            strokeLinecap="round"
           />
           <path
             d="M20 20L5 28.5"
-            stroke="rgba(56, 189, 248, 0.45)"
+            stroke="rgba(244, 223, 255, 0.45)"
             strokeWidth="1.2"
-            strokeLinejoin="round"
+            strokeLinecap="round"
+          />
+          <path
+            d="M20 20L20 37"
+            stroke="rgba(244, 223, 255, 0.3)"
+            strokeWidth="1"
+            strokeDasharray="2 3"
           />
 
-          {/* Continuous Flowing Energy Conduit Ray (Seamless 3.2s Loop) */}
+          {/* Continuous Energy Conduit Traveling Pulse */}
           <path
-            d="M20 3L35 11.5V28.5L20 37L5 28.5V11.5L20 3Z"
-            stroke="#34D399"
+            d="M20 3L35 11.5V28.5L20 37L5 28.5V11.5Z"
+            stroke="url(#travelingLightBeam)"
             strokeWidth="2.5"
             strokeLinecap="round"
+            className="animate-logo-circuit opacity-90"
             filter="url(#cpGlowFilter)"
-            className="animate-logo-circuit"
           />
 
-          {/* Precision Secondary Cross-Conduit */}
-          <path
-            d="M5 11.5L20 20L35 11.5"
-            stroke="#38BDF8"
-            strokeWidth="1.8"
-            strokeLinecap="round"
-            className="animate-logo-circuit"
-            style={{ animationDelay: '-1.6s' }}
-          />
-
-          {/* Center Orbital Command Beacon & Breathing Glow */}
+          {/* Continuous Center Command Core Beacon Breathing Glow */}
           <circle
             cx="20"
             cy="20"
             r="3.5"
-            fill="#10B981"
-            className="animate-logo-beacon"
+            className="fill-[#F4DFFF] animate-logo-beacon"
+            filter="drop-shadow(0 0 6px #C069FF)"
           />
           <circle
             cx="20"
             cy="20"
-            r="7.5"
-            stroke="#38BDF8"
-            strokeWidth="0.8"
-            strokeDasharray="2 3"
-            strokeOpacity="0.75"
+            r="1.5"
+            className="fill-white"
           />
+
+          {/* Micro Telemetry Constellation Satellites */}
+          <circle cx="20" cy="3" r="1.5" fill="#E879F9" className="opacity-90" />
+          <circle cx="35" cy="11.5" r="1.5" fill="#EC4899" className="opacity-90" />
+          <circle cx="35" cy="28.5" r="1.5" fill="#C069FF" className="opacity-90" />
+          <circle cx="20" cy="37" r="1.5" fill="#E879F9" className="opacity-90" />
+          <circle cx="5" cy="28.5" r="1.5" fill="#EC4899" className="opacity-90" />
+          <circle cx="5" cy="11.5" r="1.5" fill="#C069FF" className="opacity-90" />
         </svg>
       </div>
 
-      {/* CloudPilot Branded Wordmark */}
+      {/* Optional In-Component Continuous Shimmering Wordmark */}
       {showWordmark && (
         <div className="flex flex-col">
           <span
-            className={`font-extrabold tracking-tight text-foreground ${wordmarkSizes[size]} bg-gradient-to-r from-foreground via-foreground/90 to-muted-text bg-clip-text transition-colors`}
+            className={`font-extrabold ${wordmarkSizes[size]} text-transparent bg-clip-text bg-gradient-to-r from-white via-[#F4DFFF] to-[#E879F9] tracking-tight group-hover:from-white group-hover:to-[#C069FF] transition-all animate-wordmark-shimmer`}
           >
             CloudPilot
+          </span>
+          <span className="text-[10px] font-mono uppercase tracking-widest text-[#C4B5FD]/70 -mt-1">
+            Command Center
           </span>
         </div>
       )}

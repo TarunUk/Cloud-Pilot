@@ -1,16 +1,14 @@
 import React, { useState } from 'react';
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion';
-import { Menu, X, ArrowRight, Sun, Moon } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import { Logo } from './Logo';
 import { Button } from './ui/button';
 import { ProgressiveBlur } from './ui/progressive-blur';
-import { useTheme, Theme } from '../context/ThemeContext';
 
 export const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollY } = useScroll();
-  const { theme, setTheme, toggleTheme } = useTheme();
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setIsScrolled(latest > 24);
@@ -21,11 +19,6 @@ export const Navbar: React.FC = () => {
     { name: 'Deploy', href: '#deploy' },
     { name: 'Monitoring', href: '#monitoring' },
     { name: 'How It Works', href: '#how-it-works' },
-  ];
-
-  const themeOptions: { value: Theme; label: string; icon: React.ReactNode }[] = [
-    { value: 'dark', label: 'Dark', icon: <Moon className="w-3.5 h-3.5" /> },
-    { value: 'light', label: 'Light', icon: <Sun className="w-3.5 h-3.5" /> },
   ];
 
   return (
@@ -46,7 +39,7 @@ export const Navbar: React.FC = () => {
           transition={{ duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
           className={`flex items-center justify-between transition-all duration-300 rounded-2xl ${
             isScrolled
-              ? 'py-2.5 px-4 sm:px-6 bg-surface/85 dark:bg-[#07080C]/85 light:bg-white/85 backdrop-blur-xl border border-border shadow-xl shadow-black/20'
+              ? 'py-2.5 px-4 sm:px-6 bg-surface/85 backdrop-blur-xl border border-border shadow-xl shadow-black/20'
               : 'py-3 px-2 bg-transparent border border-transparent'
           }`}
         >
@@ -58,7 +51,7 @@ export const Navbar: React.FC = () => {
           >
             <Logo size="md" />
             <div className="flex flex-col">
-              <span className="font-extrabold text-xl sm:text-2xl text-foreground tracking-tight group-hover:text-brand-400 dark:group-hover:text-brand-300 light:group-hover:text-emerald-700 transition-colors">
+              <span className="font-extrabold text-xl sm:text-2xl text-foreground tracking-tight group-hover:text-brand-400 transition-colors">
                 CloudPilot
               </span>
             </div>
@@ -80,38 +73,10 @@ export const Navbar: React.FC = () => {
 
           {/* Desktop Controls & CTAs */}
           <div className="hidden md:flex items-center gap-3 lg:gap-4">
-            {/* Theme Toggle Segmented Control (Strictly DARK + LIGHT) */}
-            <div
-              className="flex items-center p-1 rounded-xl bg-surface-secondary/80 border border-border text-muted-text shadow-sm"
-              role="radiogroup"
-              aria-label="Theme selection"
-            >
-              {themeOptions.map((opt) => {
-                const isActive = theme === opt.value;
-                return (
-                  <button
-                    key={opt.value}
-                    onClick={() => setTheme(opt.value)}
-                    className={`flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-medium transition-all duration-200 ${
-                      isActive
-                        ? 'bg-surface text-foreground shadow-sm font-semibold'
-                        : 'hover:text-foreground hover:bg-surface/40'
-                    }`}
-                    title={`Switch to ${opt.label} theme`}
-                    aria-checked={isActive}
-                    role="radio"
-                  >
-                    {opt.icon}
-                    <span>{opt.label}</span>
-                  </button>
-                );
-              })}
-            </div>
-
             {/* Operational Status Pill */}
-            <div className="hidden lg:flex items-center gap-2 text-xs font-mono text-muted-text px-2 py-1">
+            <div className="hidden lg:flex items-center gap-2 text-xs font-mono text-muted-text px-3 py-1.5 rounded-full bg-surface-secondary/80 border border-border">
               <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" />
-              <span>Operational</span>
+              <span>All Systems Operational</span>
             </div>
 
             <a
@@ -129,22 +94,8 @@ export const Navbar: React.FC = () => {
             </Button>
           </div>
 
-          {/* Mobile Actions: Quick Theme Switch + Animated Hamburger */}
+          {/* Mobile Actions: Animated Hamburger */}
           <div className="flex md:hidden items-center gap-2">
-            <button
-              onClick={toggleTheme}
-              className="p-2 rounded-xl text-muted-text hover:text-foreground bg-surface-secondary/70 border border-border transition-colors"
-              aria-label="Toggle dark/light theme"
-              title={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
-            >
-              {theme === 'dark' ? (
-                <Moon className="w-4 h-4 text-brand-400" />
-              ) : (
-                <Sun className="w-4 h-4 text-amber-500" />
-              )}
-            </button>
-
-            {/* Animated Menu -> X Button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 text-muted-text hover:text-foreground rounded-xl bg-surface-secondary/70 border border-border relative w-10 h-10 flex items-center justify-center"
@@ -190,7 +141,7 @@ export const Navbar: React.FC = () => {
           >
             <div className="p-6 flex flex-col space-y-4">
               <div className="flex items-center justify-between pb-3 border-b border-border">
-                <div className="flex items-center gap-2 text-xs font-mono text-brand-500 dark:text-brand-400">
+                <div className="flex items-center gap-2 text-xs font-mono text-brand-400">
                   <span className="w-2 h-2 rounded-full bg-brand-500 animate-pulse" />
                   <span>All systems operational</span>
                 </div>
@@ -207,32 +158,6 @@ export const Navbar: React.FC = () => {
                   {link.name}
                 </a>
               ))}
-
-              {/* Theme Selector for Mobile (Strictly DARK + LIGHT) */}
-              <div className="pt-2">
-                <div className="text-xs font-mono text-muted-text uppercase tracking-wider mb-2">
-                  Theme
-                </div>
-                <div className="grid grid-cols-2 gap-2">
-                  {themeOptions.map((opt) => {
-                    const isActive = theme === opt.value;
-                    return (
-                      <button
-                        key={opt.value}
-                        onClick={() => setTheme(opt.value)}
-                        className={`flex items-center justify-center gap-2 py-2 px-3 rounded-xl text-xs font-medium border transition-all ${
-                          isActive
-                            ? 'bg-brand-500/15 border-brand-500 text-brand-500 font-semibold shadow-sm'
-                            : 'bg-surface-secondary border-border text-muted-text hover:text-foreground'
-                        }`}
-                      >
-                        {opt.icon}
-                        <span>{opt.label}</span>
-                      </button>
-                    );
-                  })}
-                </div>
-              </div>
 
               {/* CTAs */}
               <div className="pt-4 border-t border-border flex flex-col gap-3">
