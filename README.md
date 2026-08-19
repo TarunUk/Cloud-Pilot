@@ -7,12 +7,16 @@
 **Your cloud infrastructure. One command center.**  
 *A modern, high-performance CloudOps & Observability platform interface designed to unify deployments, container clusters, and real-time telemetry.*
 
-[![Vercel Deployment](https://img.shields.io/badge/Deploy-Vercel-black?style=for-the-badge&logo=vercel)](https://vercel.com)
+[![Live Demo](https://img.shields.io/badge/Live_Demo-cloud--pilot--pi.vercel.app-C069FF?style=for-the-badge&logo=vercel&logoColor=white)](https://cloud-pilot-pi.vercel.app/)
 [![React 19](https://img.shields.io/badge/React-19.0.0-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Framer Motion](https://img.shields.io/badge/Framer_Motion-12.4-FF0055?style=for-the-badge&logo=framer&logoColor=white)](https://www.framer.com/motion/)
 [![Vite](https://img.shields.io/badge/Vite-6.1-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
+
+<h3>
+  <a href="https://cloud-pilot-pi.vercel.app/">🌐 View Live Application</a>
+</h3>
 
 </div>
 
@@ -21,6 +25,8 @@
 ## 🌟 Overview
 
 **CloudPilot** is a next-generation frontend concept for an enterprise-grade cloud operations command center. Built with a signature cosmic purple & radiant pink visual aesthetic, it provides DevOps teams and developers with real-time clarity across multi-region cloud environments, Kubernetes clusters, continuous delivery pipelines, and sub-millisecond telemetry feeds.
+
+🔗 **Live Preview**: [https://cloud-pilot-pi.vercel.app/](https://cloud-pilot-pi.vercel.app/)
 
 ---
 
@@ -65,7 +71,7 @@
 | **Animation Engine** | [Framer Motion](https://www.framer.com/motion/) + [Motion](https://motion.dev/) |
 | **Iconography** | [Lucide React](https://lucide.dev/) |
 | **Utilities** | `clsx` + `tailwind-merge` + `class-variance-authority` |
-| **Deployment** | [Vercel](https://vercel.com) (Single Page Application configuration) |
+| **Deployment** | [Vercel](https://cloud-pilot-pi.vercel.app/) (Single Page Application configuration) |
 
 ---
 
@@ -146,6 +152,9 @@ npm run typecheck
 
 ## 🌐 Deployment to Vercel
 
+The live production deployment is available at:  
+👉 **[https://cloud-pilot-pi.vercel.app/](https://cloud-pilot-pi.vercel.app/)**
+
 This project is pre-configured with a production-ready [`vercel.json`](./vercel.json) file including SPA route rewrites and immutable asset caching.
 
 ### Deploy with Vercel Git Integration (Recommended)
@@ -190,4 +199,5 @@ CloudPilot is a fictional cloud operations and observability concept created for
 
 **Tarun Rajput**  
 - GitHub: [@TarunUk](https://github.com/TarunUk)  
+- Live Project: [https://cloud-pilot-pi.vercel.app/](https://cloud-pilot-pi.vercel.app/)  
 - Focus: Cloud Computing & Frontend Engineering
